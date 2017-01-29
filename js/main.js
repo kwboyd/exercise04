@@ -10,25 +10,25 @@ new Vue({
         toDoItemTitle: 'First task',
         toDoItemContent: 'Example text'
       }
-    ]
-    // toDoItemTitleInput: '',
-    // toDoItemContentInput: ''
+    ],
+    toDoItemTitleInput: '',
+    toDoItemContentInput: ''
   },
   methods: {
     addTask: function() {
       this.tasks.push ({
         toDoItemTitle: this.toDoItemTitleInput,
         toDoItemContent: this.toDoItemContentInput
-      })
-      // toDoItemContentInput: '',
-      // toDoItemTitleInput: ''
+      });
+      this.toDoItemContentInput =  '';
+      this.toDoItemTitleInput =  '';
     },
     deleteTask: function(i) {
       this.tasks.splice(i, 1)
+    },
+    cancelTask: function() {
+    this.toDoItemTitleInput = '',
+    this.toDoItemContentInput = ''
     }
-    // cancelTask: function() {
-    //   toDoItemTitleInput: '',
-    //   toDoItemContentInput: ''
-    // }
   }
 });
