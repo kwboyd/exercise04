@@ -14,6 +14,7 @@
       <div class="column is-half is-offset-one-quarter content">
 
         <section>
+          <!-- loops through task array -->
           <div v-for="(task, index) in tasks" class="card">
             <div class="card-header">
               <p class="card-header-title">{{ task.toDoItemTitle }}</p>
@@ -35,6 +36,7 @@
               <input type="text" class="input" placeholder="Todo Item Title" v-model="toDoItemTitleInput" @input="inputTask" />
             </div>
             <div class="control">
+              <!-- shows finish if editing, create if adding -->
               <a class="button is-primary" v-if="editingTask" @click="finishEditing">Finish</a>
               <a class="button is-primary" v-else @click="addTask">Create</a>
             </div>
